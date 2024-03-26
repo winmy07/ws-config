@@ -1,0 +1,23 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: ws-config-server
+  cloud:
+    config:
+      server:
+        git:         #配置远程仓库的地址
+          uri: https://github.com/winmy07/ws-config.git
+          password: SINObest)000
+          username: winmy07
+          search-paths: xxxxx     #git仓库下相对搜索地址
+      label: master  #配置远程分支名
+eureka:
+  instance:
+    instance-id: configServer
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
